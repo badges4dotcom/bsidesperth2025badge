@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>BSides Perth 2025 - Virtual Badge</title>
+    <!-- Pixel font for TFT-style text -->
+    <link href="/Fonts/PressStart2.css" rel="stylesheet">
+    <style>
+      body {
+        background: black;
+        color: white;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      canvas {
+        border: 2px solid #0f0;
+        image-rendering: pixelated; /* keeps text + images blocky */
+        margin-bottom: 10px;
+      }
+
+        .container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .background {
+        display: block;
+      }
+
+      #lcd-bg {
+      position: absolute;
+      top: 30px;    /* adjust vertical position */
+      left: 36px;   /* adjust horizontal position */
+      width: 300px; /* adjust width */
+      height: 148px;/* adjust height */
+      z-index: 1;   /* behind the LCD */
+    }
+
+      /* LCD screen */
+      #lcd {
+        position: absolute;
+        top: 44px;   /* change to match PNG position */
+        left: 106px;  /* change to match PNG position */
+        border: 1px solid #333;
+        z-index: 2;
+      }
+
+      #esp32 {
+        position: absolute;
+        top: 253px;   /* change to match PNG position */
+        left: 110px;  /* change to match PNG position */
+        border: 1px solid #333;
+        z-index: 2;
+      }
+
+      /* Buttons */
+      #btnUP {
+        position: absolute;
+        top: 375px;   /* adjust */
+        left: 41px;  /* adjust */
+        width: 34px;
+        height: 32px;
+      }
+
+      #btnDOWN {
+        position: absolute;
+        top: 438px;   /* adjust */
+        left: 41px;  /* adjust */
+        width: 34px;
+        height: 32px;
+      }
+
+      #btnA {
+        position: absolute;
+        top: 375px;   /* adjust */
+        left: 290px;  /* adjust */
+        width: 34px;
+        height: 32px;
+      }
+
+      #btnB {
+        position: absolute;
+        top: 438px;   /* adjust */
+        left: 290px;  /* adjust */
+        width: 34px;
+        height: 32px;
+      }
+
+      #title {
+        font-family: 'Press Start 2P';font-size: 16px;
+      }
+      #subtitle {
+        font-family: 'Press Start 2P';font-size: 12px;
+      }
+      .hiddenlink:link, .hiddenlink:visited, .hiddenlink:hover, .hiddenlink:active {
+        font-family: 'Press Start 2P';font-size: 12px;
+        text-decoration: none;
+        color: white;
+      }
+
+      #modalOverlay, #modalCheatsOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1000;
+      }
+      #modalOverlay.active, #modalCheatsOverlay.active {
+        visibility: visible;
+        opacity: 1;
+      }
+      #modal, #modalCheats {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 300px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        text-align: center;
+      }
+      #modal select, #modalCheats input {
+        width: 90%;
+        padding: 8px;
+        margin: 15px 0;
+      }
+      #modal button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+      #btnCheatsConsole {
+        display: none;
+      }
+
+      .github-footer {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #24292e;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: sans-serif;
+        text-decoration: none;
+        z-index: 1000;
+      }
+
+      .github-footer img {
+        height: 24px;
+        width: 24px;
+      }
+
+      .github-footer:hover {
+        background-color: #333;
+      }
+    </style>
+    <script src="Images/Tilemap.js"></script>
+    <script src="Helpers.js"></script>
+    <script src="Structures.js"></script>
+    <script src="Game_Data.js"></script>
+    <script src="Screen_Elements.js"></script>
+    <script src="Status_Screen.js"></script>
+    <script src="User_Settings.js"></script>
+    <script src="LCD.js"></script>
+    <script src="User_Input.js"></script>
+    <script src="Image_Handling.js"></script>
+    <script src="Message_Screen.js"></script>
+    <script src="Gameplay.js"></script>
+    <script src="Animations.js"></script>
+    <script src="Challenges.js"></script>
+    <script src="WiFi.js"></script>
+    <script src="BSides.js"></script>  
+    <script src="VirtualBadgeFunctions.js"></script>
+  </head>
+  <body onload="setup()">
+    <div id="modalOverlay">
+      <div id="modal">
+        <h2 style="color: black">I am a BSides Perth 2025...</h2>
+        <select id="optionSelect" value="0">
+          <option value="0">Presenter</option>
+          <option value="1" selected>Attendee</option>
+          <option value="2">Volunteer</option>
+        </select>
+        <br />
+        <button id="submitBtn" onclick="setBadgeColour()">Go</button>
+      </div>
+    </div>
+    <div id="modalCheatsOverlay">
+      <div id="modalCheats">
+        <h2 style="color: black">Cheat Code</h2>
+        <input type="text" id="txtCheatCode" />
+        <br />
+        <button id="submitCheatBtn" onclick="applyCheatCode()">Apply</button>
+      </div>
+    </div>
+    <span id="title">BSides Perth 2025 - Virtual Badge</span>
+    <span id="subtitle"><a class="hiddenlink" href="../index.html"><</a> BSides Adventures - Episode 2: Escape from the Metaverse <a class="hiddenlink" href="#">></a></span>
+    <div class="container">
+      <!-- Background PNG -->
+      <img src="Images/BadgeBlue_Back.PNG" alt="Background" class="background" id="BadgeImage" style="z-index: 0; position: relative;">
+
+      <div id="lcd-bg"><img src="Images/LCDModule.png" style="max-height: 166px; max-width: 300px;"></div>
+
+      <img id="esp32" src="Images/ESP32.png"/>
+
+      <!-- LCD canvas -->
+      <canvas id="lcd" width="160" height="128"></canvas>
+
+      <!-- Buttons -->
+      <button onclick="btnUPPressed()" id="btnUP">&#11044;</button>
+      <button onclick="btnDOWNPressed()" id="btnDOWN">&#11044;</button>
+      <button onclick="btnAPressed()" id="btnA">&#11044;</button>
+      <button onclick="btnBPressed()" id="btnB">&#11044;</button>
+    </div>
+    <button onclick="showOtherBadgeSide()" id="btnShowOtherBadgeSide">Flip Badge</button>
+    <button onclick="showBadgeColourDialog()" id="btnBackground">Attendee Mode</button>
+    <button onclick="showCheatsConsoleDialog()" id="btnCheatsConsole">Cheats Console</button>
+    <div id="divExtraToolbar">
+    </div>
+    <a href="https://github.com/badges4dotcom/bsidesperth2025badge" class="github-footer" target="_blank">
+      <img src="github-mark-white.png" alt="GitHub Logo">
+      <span>Find the code on GitHub</span>
+    </a>
+  </body>
+</html>
