@@ -1,0 +1,23 @@
+Example JSON Queries:
+
+Registration (register.php)
+
+"user": {
+	"UUID": "<UUID>",
+	"Passcode": "<Passcode>",
+	"AnimalsCollected": "0",
+	"OnlineChallengesCompleted": "0",
+	"OfflineChallengesCompleted": "0"
+}
+
+Challenge (challenge.php/challenge2.php)
+
+{"user":{"UUID":"<UUID>,"Passcode":"<Passcode>","AnimalsCollected":"0","OnlineChallengesCompleted":"0","OfflineChallengesCompleted": "0"},"challenge":{"ChallengeID":"2","TimeRemaining":"90","GPIO":"0","SDCard":""}}"
+
+curl command:
+
+curl --header "Content-Type: application/json" \
+  --cacert publiccertificate.pem
+  --request POST \
+  --data '"{"user":{"UUID":"<UUID>,"Passcode":"<Passcode>","AnimalsCollected":"0","OnlineChallengesCompleted":"0","OfflineChallengesCompleted": "0"},"challenge":{"ChallengeID":"2","TimeRemaining":"90","GPIO":"0","SDCard":""}}"' \
+  https://badge.bsidesperth.com.au:8080/challenge.php

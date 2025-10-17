@@ -4,7 +4,7 @@
 
 Instructions on how to assemble the physical badge can be found here: [Instructions](docs/AssemblyInstructions.md)
 
-If a re-download of the physical badge is required, follow these[Instructions](docs/DownloadInstructions.md). This will be required if you wish to attempt the online challenges (see Known Issues below).
+If a re-download of the physical badge is required, follow these [Instructions](docs/DownloadInstructions.md). This will be required if you wish to attempt the online challenges (see Known Issues below).
 
 ## Virtual Badge
 
@@ -24,6 +24,14 @@ A badge holder can be 3D printed using an off-the-shelf 3D printer. Recommended 
 
 ![](/BadgeHolder_3DPrint/Screenshot1.png) ![](/BadgeHolder_3DPrint/Screenshot4.png)
 
+## Customisation
+
+Customisation of the virtual and physical badge are both possible. Extra details can be found [here](docs/Customisation.md)
+
 ## Known Issues
 
 - To play the Online Challenges on a ESP32 supplied in a component pack, a re-download of the physical badge code to the ESP32 is required.
+
+## Like the game/badge?
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/badges4dotcom)
