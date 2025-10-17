@@ -2,9 +2,9 @@
 
 ## Physical Badge
 
-Instructions on how to assemble the physical badge can be found here: [Instructions](docs/AssemblyInstructions.md)
+Instructions on how to assemble the physical badge can be found [here](docs/AssemblyInstructions.md)
 
-If a re-download of the physical badge is required, follow these [Instructions](docs/DownloadInstructions.md). This will be required if you wish to attempt the online challenges (see Known Issues below).
+If a re-download of the physical badge is required, follow these [instructions](docs/DownloadInstructions.md). This will be required if you wish to attempt the online challenges (see Known Issues below).
 
 ## Virtual Badge
 
