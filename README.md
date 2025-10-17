@@ -18,3 +18,5 @@ Code for the Virtual Badge Server will be made available ~1st November 2025.
 
 A badge holder can be 3D printed using an off-the-shelf 3D printer. Recommended print settings are PLA plastic, 60+% infill, 40mm/s print speed. Some stringing may occur if filament is damp and/or print speed is too high.
 
+/BadgeHolder_3DPrint/Screenshot1.png /BadgeHolder_3DPrint/Screenshot2.png
+/BadgeHolder_3DPrint/Screenshot3.png /BadgeHolder_3DPrint/Screenshot4.png
