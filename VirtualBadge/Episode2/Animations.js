@@ -80,7 +80,7 @@ async function displayIntroMessage() {
     ctx.fillStyle = "white";
     ctx.font = "8px monospace";
     ctx.fillText("Cyber Echidna has been turned", 12, SCREEN_HEIGHT - 40);
-    ctx.fillText("into an BSides participant.", 18, SCREEN_HEIGHT - 30);
+    ctx.fillText("into a BSides participant.", 18, SCREEN_HEIGHT - 30);
     ctx.fillText("[A] to continue", 40, SCREEN_HEIGHT - 10);
   }
 

@@ -12,7 +12,11 @@ The virtual badge can be accessed here: https://badge.bsidesperth.com.au/
 
 The code for the Virtual Badge code can be found in this repository under "VirtualBadge".
 
-The virtual badge does not support "Online Challenges", but does contain hidden features such as cheats and an easter egg.
+The virtual badge does not support "Online Challenges", but does contain hidden features such as a second episode, cheats, and an easter egg.
+
+## Physical Badge Code Template
+
+There is a basic template for an Arduino program under the folder "Template". The template demonstrates basic use of the LCD screen, ESP32, and button inputs. The download instructions can be found [here](docs/DownloadInstructions.md).
 
 ## Virtual Badge Server (API for Online Challenges)
 
