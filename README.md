@@ -10,15 +10,15 @@ If a re-download of the physical badge is required, follow these [instructions](
 
 | Qty | Item | Link | Alternative Link |
 | --- | --- | --- | --- |
-| 4	| 6x6x6mm Push Button Tactile Switch | https://a.aliexpress.com/_mtKEuoZ || 
-| 4	| 10k 1/4W 1% Metal Film Resistor | https://a.aliexpress.com/_m0tmaNF ||
-| 1	| 1x4 2.54mm Male Header Pin Connector | https://a.aliexpress.com/_mLn1ap7 ||
-| 1	| 1x8 2.54mm Female Header Pin Connector | https://a.aliexpress.com/_mquvebf | https://a.aliexpress.com/_mNltGYh |
-| 1	| 1x4 2.54mm Female Header Pin Connector | https://a.aliexpress.com/_mquvebf | https://a.aliexpress.com/_mNltGYh |
-| 2	| 1x15 2.54mm Female Header Pin Connector | https://a.aliexpress.com/_mquvebf | https://a.aliexpress.com/_mNltGYh |
-| 1	| 2x3 2.54mm Femal Header Pin Connector	| https://a.aliexpress.com/_mK6bxvJ ||
-| 1	| ESP32 DOIT DevKit v1 - 30Pin | https://a.aliexpress.com/_mr7LSPJ ||
-| 1	| 1.8" LCD TFT Display | https://a.aliexpress.com/_mPspKyp ||
+| 4	| 6x6x6mm Push Button Tactile Switch | [Link](https://a.aliexpress.com/_mtKEuoZ) || 
+| 4	| 10k 1/4W 1% Metal Film Resistor | [Link](https://a.aliexpress.com/_m0tmaNF) ||
+| 1	| 1x4 2.54mm Male Header Pin Connector | [Link](https://a.aliexpress.com/_mLn1ap7) ||
+| 1	| 1x8 2.54mm Female Header Pin Connector | [Link](https://a.aliexpress.com/_mquvebf) | [Link](https://a.aliexpress.com/_mNltGYh) |
+| 1	| 1x4 2.54mm Female Header Pin Connector | [Link](https://a.aliexpress.com/_mquvebf) | [Link](https://a.aliexpress.com/_mNltGYh) |
+| 2	| 1x15 2.54mm Female Header Pin Connector | [Link](https://a.aliexpress.com/_mquvebf) | [Link](https://a.aliexpress.com/_mNltGYh) |
+| 1	| 2x3 2.54mm Femal Header Pin Connector	| [Link](https://a.aliexpress.com/_mK6bxvJ) ||
+| 1	| ESP32 DOIT DevKit v1 - 30Pin | [Link](https://a.aliexpress.com/_mr7LSPJ) ||
+| 1	| 1.8" LCD TFT Display | [Link](https://a.aliexpress.com/_mPspKyp) ||
 
 ## Virtual Badge
 
