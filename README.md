@@ -9,6 +9,7 @@ If a re-download of the physical badge is required, follow these [instructions](
 ### Parts List
 
 | Qty | Item | Link | Alternative Link |
+| --- | --- | --- | --- |
 | 4	| 6x6x6mm Push Button Tactile Switch | https://a.aliexpress.com/_mtKEuoZ || 
 | 4	| 10k 1/4W 1% Metal Film Resistor | https://a.aliexpress.com/_m0tmaNF ||
 | 1	| 1x4 2.54mm Male Header Pin Connector | https://a.aliexpress.com/_mLn1ap7 ||
