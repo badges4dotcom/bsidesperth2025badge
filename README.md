@@ -6,6 +6,19 @@ Instructions on how to assemble the physical badge can be found [here](docs/Asse
 
 If a re-download of the physical badge is required, follow these [instructions](docs/DownloadInstructions.md). This will be required if you wish to attempt the online challenges (see Known Issues below).
 
+### Parts List
+
+| Qty | Item | Link | Alternative Link |
+| 4	| 6x6x6mm Push Button Tactile Switch | https://a.aliexpress.com/_mtKEuoZ || 
+| 4	| 10k 1/4W 1% Metal Film Resistor | https://a.aliexpress.com/_m0tmaNF ||
+| 1	| 1x4 2.54mm Male Header Pin Connector | https://a.aliexpress.com/_mLn1ap7 ||
+| 1	| 1x8 2.54mm Female Header Pin Connector | https://a.aliexpress.com/_mquvebf | https://a.aliexpress.com/_mNltGYh |
+| 1	| 1x4 2.54mm Female Header Pin Connector | https://a.aliexpress.com/_mquvebf | https://a.aliexpress.com/_mNltGYh |
+| 2	| 1x15 2.54mm Female Header Pin Connector | https://a.aliexpress.com/_mquvebf | https://a.aliexpress.com/_mNltGYh |
+| 1	| 2x3 2.54mm Femal Header Pin Connector	| https://a.aliexpress.com/_mK6bxvJ ||
+| 1	| ESP32 DOIT DevKit v1 - 30Pin | https://a.aliexpress.com/_mr7LSPJ ||
+| 1	| 1.8" LCD TFT Display | https://a.aliexpress.com/_mPspKyp ||
+
 ## Virtual Badge
 
 The virtual badge can be accessed here: https://badge.bsidesperth.com.au/
@@ -34,7 +47,9 @@ Customisation of the virtual and physical badge are both possible. Extra details
 
 ## Known Issues
 
-- To play the Online Challenges on a ESP32 supplied in a component pack, a re-download of the physical badge code to the ESP32 is required.
+- To play the Online Challenges on a ESP32 supplied in a component pack, a re-download of the physical badge code to the ESP32 is required. [Fixed]
+- Online Challenges were unavailable (18th Oct) due to firewall issue. This has since been resolved. [Fixed]
+- Offline Challenges now generates sequences which use all four buttons (only three buttons were being used in the original code). [Fixed]
 
 ## Like the game/badge?
 

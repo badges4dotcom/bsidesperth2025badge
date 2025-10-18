@@ -4,7 +4,7 @@ uint8_t offlineChallengeSequence[MAX_CHALLENGE_SEQUENCE];			// Holds the sequenc
 // Generates a random sequence of button presses required for the challenge sequence.
 void generateOfflineChallengeSequence(int length) {
 	for (int i=0; i<MAX_CHALLENGE_SEQUENCE; i++) {
-		if (i<length) offlineChallengeSequence[i] = random(1, 4);
+		if (i<length) offlineChallengeSequence[i] = random(1, 5);
 		else offlineChallengeSequence[i] = 0;
 	}
 }
