@@ -72,47 +72,81 @@ function displaySequence(positionInSequence) {
         if (seqVal > 0) {
           // Draw outer box
           ctx.strokeStyle = iconColour;
-          ctx.strokeRect(
-            xStartPos + x * (2 * ICON_SIZE),
-            yStartPos + y * (2 * ICON_SIZE),
-            ICON_SIZE,
-            ICON_SIZE
-          );
+          if (!keyboardMode) {
+            ctx.strokeRect(
+              xStartPos + x * (2 * ICON_SIZE),
+              yStartPos + y * (2 * ICON_SIZE),
+              ICON_SIZE,
+              ICON_SIZE
+            );
+          }
   
           // Draw inside fill depending on sequence value
           ctx.fillStyle = iconColour;
           switch (seqVal) {
             case 1: // Top Left
-              ctx.fillRect(
-                xStartPos + x * (2 * ICON_SIZE),
-                yStartPos + y * (2 * ICON_SIZE),
-                ICON_SIZE / 2,
-                ICON_SIZE / 2
-              );
+              if (!keyboardMode) {
+                ctx.fillRect(
+                  xStartPos + x * (2 * ICON_SIZE),
+                  yStartPos + y * (2 * ICON_SIZE),
+                  ICON_SIZE / 2,
+                  ICON_SIZE / 2
+                );
+              } else {
+                setTextColor(iconColour);
+                setTextSize(2);
+                setCursor(xStartPos + x * (2 * ICON_SIZE), yStartPos + y * (2 * ICON_SIZE));
+                tftPrint("U");
+                setTextColor("white");
+              }
               break;
             case 2: // Top Right
-              ctx.fillRect(
-                xStartPos + x * (2 * ICON_SIZE) + (ICON_SIZE / 2),
-                yStartPos + y * (2 * ICON_SIZE),
-                ICON_SIZE / 2,
-                ICON_SIZE / 2
-              );
+              if (!keyboardMode) {
+                ctx.fillRect(
+                  xStartPos + x * (2 * ICON_SIZE) + (ICON_SIZE / 2),
+                  yStartPos + y * (2 * ICON_SIZE),
+                  ICON_SIZE / 2,
+                  ICON_SIZE / 2
+                );
+              } else {
+                setTextColor(iconColour);
+                setTextSize(2);
+                setCursor(xStartPos + x * (2 * ICON_SIZE), yStartPos + y * (2 * ICON_SIZE));
+                tftPrint("L");
+                setTextColor("white");
+              }
               break;
             case 3: // Bottom Right
-              ctx.fillRect(
-                xStartPos + x * (2 * ICON_SIZE) + (ICON_SIZE / 2),
-                yStartPos + y * (2 * ICON_SIZE) + (ICON_SIZE / 2),
-                ICON_SIZE / 2,
-                ICON_SIZE / 2
-              );
+              if (!keyboardMode) {
+                ctx.fillRect(
+                  xStartPos + x * (2 * ICON_SIZE) + (ICON_SIZE / 2),
+                  yStartPos + y * (2 * ICON_SIZE) + (ICON_SIZE / 2),
+                  ICON_SIZE / 2,
+                  ICON_SIZE / 2
+                );
+              } else {
+                setTextColor(iconColour);
+                setTextSize(2);
+                setCursor(xStartPos + x * (2 * ICON_SIZE), yStartPos + y * (2 * ICON_SIZE));
+                tftPrint("R");
+                setTextColor("white");
+              }
               break;
             case 4: // Bottom Left
-              ctx.fillRect(
-                xStartPos + x * (2 * ICON_SIZE),
-                yStartPos + y * (2 * ICON_SIZE) + (ICON_SIZE / 2),
-                ICON_SIZE / 2,
-                ICON_SIZE / 2
-              );
+              if (!keyboardMode) {
+                ctx.fillRect(
+                  xStartPos + x * (2 * ICON_SIZE),
+                  yStartPos + y * (2 * ICON_SIZE) + (ICON_SIZE / 2),
+                  ICON_SIZE / 2,
+                  ICON_SIZE / 2
+                );
+              } else {
+                setTextColor(iconColour);
+                setTextSize(2);
+                setCursor(xStartPos + x * (2 * ICON_SIZE), yStartPos + y * (2 * ICON_SIZE));
+                tftPrint("D");
+                setTextColor("white");
+              }
               break;
           }
         }

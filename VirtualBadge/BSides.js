@@ -18,6 +18,7 @@ let displayingMessage = false;
 
 var movementSpeed = 1;
 var easterEgg = false;
+var keyboardMode = false;
 
 async function displayHomeScreen() {
     initialiseScreenAndText();

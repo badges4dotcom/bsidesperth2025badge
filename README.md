@@ -28,6 +28,8 @@ The code for the Virtual Badge code can be found in this repository under "Virtu
 
 The virtual badge does not support "Online Challenges", but does contain hidden features such as a second episode, cheats, and an easter egg.
 
+The virtual badge now supports keyboard inputs. The four buttons are mapped to W [Up], S [Down], A [Left/A], and D [Right/B]. Once a keyboard input is used, the symbols used in the sequence game change to U = UP, D = DOWN, L = LEFT, R = RIGHT. Thanks again to Matt for the suggestion and the code snippet for this feature. 
+
 ## Physical Badge Code Template
 
 There is a basic template for an Arduino program under the folder "Template". The template demonstrates basic use of the LCD screen, ESP32, and button inputs. The download instructions can be found [here](docs/DownloadInstructions.md).
