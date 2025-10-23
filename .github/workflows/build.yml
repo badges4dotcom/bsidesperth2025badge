@@ -1,0 +1,50 @@
+name: Build binary for badge
+
+on:
+  push:
+    paths:
+      - 'PhysicalBadge/BSides/**'
+  pull_request:
+    paths:
+      - 'PhysicalBadge/BSides/**'
+  workflow_dispatch: #Allow workflow to be run manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Arduino CLI
+        uses: arduino/setup-arduino-cli@v2
+
+      - name: Install ESP32 board support
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install esp32:esp32
+
+      - name: Install libraries
+        run: |
+          arduino-cli lib install \
+            "SD" \
+            "Adafruit BusIO" \
+            "Adafruit GFX Library" \
+            "Adafruit ST7735 and ST7789 Library" \
+            "ArduinoJson" \
+            "RLEBitmap"
+
+      - name: Compile (please)
+        run: |
+          arduino-cli compile \
+            --fqbn esp32:esp32:esp32doit-devkit-v1 \
+            --output-dir build \
+            PhysicalBadge/BSides/BSides.ino
+
+      - name: Upload binary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: BSides-firmware
+          path: build/*.bin
+
